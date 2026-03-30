@@ -1,9 +1,9 @@
 <?php if ($user['role'] === 'TECH'): ?>
-<form method="get" class="row mb-3">
+<form method="get" class="filter-grid space-bottom-md">
     <input type="hidden" name="route" value="tickets">
 
-    <div class="col">
-        <select name="statut" class="form-select">
+  <div>
+    <select name="statut" class="ui-select">
             <option value="">Statut</option>
             <option value="OPEN">OPEN</option>
             <option value="IN_PROGRESS">IN_PROGRESS</option>
@@ -12,8 +12,8 @@
         </select>
     </div>
 
-    <div class="col">
-        <select name="priorite" class="form-select">
+  <div>
+    <select name="priorite" class="ui-select">
             <option value="">Priorité</option>
             <option value="FAIBLE">FAIBLE</option>
             <option value="MOYENNE">MOYENNE</option>
@@ -21,23 +21,23 @@
         </select>
     </div>
 
-    <div class="col">
-        <button class="btn btn-primary">Filtrer</button>
+  <div>
+    <button class="ui-btn ui-btn-primary">Filtrer</button>
     </div>
 </form>
 <?php endif; ?>
 
-<h1 class="h4 mb-3">Mes tickets</h1>
+<h1 class="page-title-sm space-bottom-md">Mes tickets</h1>
 <?php if ($user['role'] === 'ETUDIANT'): ?>
-<a href="index.php?route=ticket-create" class="btn btn-primary mb-3">
+<a href="index.php?route=ticket-create" class="ui-btn ui-btn-primary space-bottom-md">
   Nouveau ticket
 </a>
 <?php endif; ?>
 
 <?php if (empty($tickets)): ?>
-  <div class="alert alert-info">Aucun ticket pour le moment.</div>
+  <div class="notice notice-info">Aucun ticket pour le moment.</div>
 <?php else: ?>
-  <table class="table table-bordered">
+  <table class="data-table data-table-bordered">
     <thead>
       <tr>
         <th>Titre</th>

@@ -1,7 +1,7 @@
-<h1 class="h4 mb-3"><?= htmlspecialchars($ticket['titre']) ?></h1>
+<h1 class="page-title-sm space-bottom-md"><?= htmlspecialchars($ticket['titre']) ?></h1>
 
-<div class="card">
-  <div class="card-body">
+<div class="ui-card">
+  <div class="ui-card-body">
 
     <p><strong>Catégorie :</strong> <?= htmlspecialchars($ticket['categorie']) ?></p>
     <p><strong>Priorité :</strong> <?= htmlspecialchars($ticket['priorite']) ?></p>
@@ -23,7 +23,7 @@
   <?php if ($user['role'] === 'TECH'): ?>
     <?php if ($user['role'] === 'TECH' && $ticket['statut'] === 'OPEN'): ?>
     <a href="index.php?route=ticket-take&id=<?= $ticket['id'] ?>"
-       class="btn btn-primary btn-sm">
+         class="ui-btn ui-btn-primary ui-btn-sm">
        Prendre en charge
     </a>
 <?php endif; ?>
@@ -32,20 +32,20 @@
 <h5>Modifier la priorité :</h5>
 
 <a href="index.php?route=ticket-priority&id=<?= $ticket['id'] ?>&priorite=FAIBLE"
-class="btn btn-success btn-sm">Faible</a>
+class="ui-btn ui-btn-success ui-btn-sm">Faible</a>
 
 <a href="index.php?route=ticket-priority&id=<?= $ticket['id'] ?>&priorite=MOYENNE"
-class="btn btn-warning btn-sm">Moyenne</a>
+class="ui-btn ui-btn-warning ui-btn-sm">Moyenne</a>
 
 <a href="index.php?route=ticket-priority&id=<?= $ticket['id'] ?>&priorite=ELEVEE"
-class="btn btn-danger btn-sm">Élevée</a>
+class="ui-btn ui-btn-danger ui-btn-sm">Élevée</a>
   <h5>Changer le statut :</h5>
 
-  <a href="index.php?route=ticket-status&id=<?= $ticket['id'] ?>&status=IN_PROGRESS" class="btn btn-warning btn-sm">En cours</a>
+  <a href="index.php?route=ticket-status&id=<?= $ticket['id'] ?>&status=IN_PROGRESS" class="ui-btn ui-btn-warning ui-btn-sm">En cours</a>
 
-  <a href="index.php?route=ticket-status&id=<?= $ticket['id'] ?>&status=RESOLVED" class="btn btn-success btn-sm">Résolu</a>
+  <a href="index.php?route=ticket-status&id=<?= $ticket['id'] ?>&status=RESOLVED" class="ui-btn ui-btn-success ui-btn-sm">Résolu</a>
 
-  <a href="index.php?route=ticket-status&id=<?= $ticket['id'] ?>&status=CLOSED" class="btn btn-dark btn-sm">Fermé</a> 
+  <a href="index.php?route=ticket-status&id=<?= $ticket['id'] ?>&status=CLOSED" class="ui-btn ui-btn-dark ui-btn-sm">Fermé</a> 
     <hr>
     <p><?= nl2br(htmlspecialchars($ticket['description'])) ?></p>
     <hr>
@@ -55,24 +55,24 @@ class="btn btn-danger btn-sm">Élevée</a>
 
 <?php if (!empty($messages)): ?>
   <?php foreach ($messages as $m): ?>
-    <div class="border p-2 mb-2">
+    <div class="box box-pad-sm space-bottom-sm">
       <small><?= htmlspecialchars($m['created_at']) ?></small>
       <p><?= nl2br(htmlspecialchars($m['contenu'])) ?></p>
     </div>
   <?php endforeach; ?>
 <?php else: ?>
-  <p class="text-muted">Aucun message pour ce ticket.</p>
+  <p class="text-soft">Aucun message pour ce ticket.</p>
 <?php endif; ?>
 
 <form method="post">
-  <div class="mb-3">
-    <textarea name="contenu" class="form-control" required></textarea>
+  <div class="field-block">
+    <textarea name="contenu" class="ui-input" required></textarea>
   </div>
-  <button class="btn btn-primary btn-sm">Envoyer</button>
+  <button class="ui-btn ui-btn-primary ui-btn-sm">Envoyer</button>
 </form>
 <?php endif; ?>  
   </div>
 </div>
-<a href="index.php?route=tickets" class="btn btn-secondary mt-3">
+<a href="index.php?route=tickets" class="ui-btn ui-btn-secondary space-top-md">
   Retour
 </a>

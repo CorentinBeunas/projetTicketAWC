@@ -1,17 +1,30 @@
-<div class="row justify-content-center">
-<div class="col-md-5">
-<div class="card shadow-sm">
-<div class="card-body">
-<h4 class="mb-3">Connexion</h4>
-<form method="post">
-<input type="email" name="email" class="form-control mb-3" placeholder="Email" required>
-<input type="password" name="password" class="form-control mb-3" placeholder="Mot de passe" required>
-<button class="btn btn-primary w-100">Se connecter</button>
-</form>
-</div>
-</div>
-<a href="index.php?route=register" class="btn btn-secondary w-100">
-  Créer un compte étudiant
-</a>
-</div>
-</div>
+<section class="auth-page">
+  <div class="auth-panel">
+    <header class="auth-head">
+      <h1 class="auth-title">Connexion</h1>
+      <p class="auth-subtitle">Accedez a votre espace Campus HelpDesk.</p>
+    </header>
+
+    <?php if (!empty($error)): ?>
+      <div class="auth-error"><?= htmlspecialchars($error) ?></div>
+    <?php endif; ?>
+
+    <form method="post" class="auth-form">
+      <div class="auth-field">
+        <label class="auth-label" for="login-email">Adresse email</label>
+        <input id="login-email" type="email" name="email" class="auth-input" placeholder="nom@exemple.com" required>
+      </div>
+
+      <div class="auth-field">
+        <label class="auth-label" for="login-password">Mot de passe</label>
+        <input id="login-password" type="password" name="password" class="auth-input" placeholder="Votre mot de passe" required>
+      </div>
+
+      <button class="auth-btn auth-btn-primary" type="submit">Se connecter</button>
+    </form>
+
+    <div class="auth-aux">
+      <a href="index.php?route=register" class="auth-link-block">Créer un compte etudiant</a>
+    </div>
+  </div>
+</section>

@@ -1,19 +1,19 @@
-<h1 class="mb-4">Bienvenue <?= htmlspecialchars($user['nom']) ?></h1>
+<h1 class="page-title space-bottom-lg">Bienvenue <?= htmlspecialchars($user['nom']) ?></h1>
 
-<div class="card shadow-sm">
-<div class="card-body">
+<div class="ui-card ui-shadow-soft">
+<div class="ui-card-body">
 
-<h4 class="mb-3">Tickets</h4>
+<h4 class="section-title space-bottom-md">Tickets</h4>
 
 <?php if (empty($tickets)): ?>
 
-<div class="alert alert-info">
+<div class="notice notice-info">
 Aucun ticket pour le moment.
 </div>
 
 <?php else: ?>
 
-<table class="table table-hover">
+<table class="data-table data-table-hover">
 <thead>
 <tr>
 <th>ID</th>
@@ -35,13 +35,13 @@ Aucun ticket pour le moment.
 <td><?= htmlspecialchars($t['titre']) ?></td>
 
 <td>
-<span class="badge bg-warning">
+<span class="tag tag-warn">
 <?= htmlspecialchars($t['priorite']) ?>
 </span>
 </td>
 
 <td>
-<span class="badge bg-secondary">
+<span class="tag tag-muted">
 <?= htmlspecialchars($t['statut']) ?>
 </span>
 </td>
@@ -50,7 +50,7 @@ Aucun ticket pour le moment.
 
 <td>
 <a href="index.php?route=ticket-show&id=<?= $t['id'] ?>" 
-class="btn btn-sm btn-primary">
+class="ui-btn ui-btn-sm ui-btn-primary">
 Voir
 </a>
 </td>
