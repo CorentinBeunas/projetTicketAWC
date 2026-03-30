@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Ven 27 Mars 2026 à 08:07
--- Version du serveur :  5.7.11
--- Version de PHP :  7.2.7
+-- Généré le :  Lun 30 Mars 2026 à 14:37
+-- Version du serveur :  5.6.20-log
+-- Version de PHP :  7.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,10 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `campus_helpdesk`
 --
-
 CREATE DATABASE IF NOT EXISTS campus_helpdesk;
 USE campus_helpdesk;
-
 -- --------------------------------------------------------
 
 --
@@ -42,13 +40,13 @@ CREATE TABLE `messages` (
 --
 
 INSERT INTO `messages` (`id`, `ticket_id`, `auteur_id`, `contenu`, `created_at`) VALUES
-(1, 1, 2, 'fdhjghghf', '2026-02-27 17:35:24'),
-(2, 1, 2, 'fini', '2026-02-28 10:23:43'),
-(3, 4, 2, 'Donnez moi le nom de la dernière mise à jour de ton pc.', '2026-02-28 10:35:24'),
-(4, 4, 2, 'Donnez moi le nom de la dernière mise à jour de ton pc.', '2026-02-28 10:35:37'),
-(5, 5, 2, 'non', '2026-02-28 11:04:32'),
-(6, 8, 2, 'rtèijhgry(è-_iukjhgyt-è_ouij;,ghytè-iujh,nhfyrè_iukhgjhu_uolhj;,gjftu', '2026-03-06 19:20:30'),
-(7, 9, 2, 'rod_it,fudx,ufdxufkxiufxkdifuxkdifuxfixuflrifufdjrlikfudrftigdrutgdrolifkgudjflitducfjgldcokgujdroçitk,g', '2026-03-08 20:03:47');
+(1, 1, 2, 'test', '2026-02-27 17:35:24'),
+(2, 1, 2, 'test', '2026-02-28 10:23:43'),
+(3, 4, 2, 'test', '2026-02-28 10:35:24'),
+(4, 4, 2, 'test', '2026-02-28 10:35:37'),
+(5, 5, 2, 'test', '2026-02-28 11:04:32'),
+(6, 8, 2, 'test', '2026-03-06 19:20:30'),
+(7, 9, 2, 'test', '2026-03-08 20:03:47');
 
 -- --------------------------------------------------------
 
@@ -74,15 +72,15 @@ CREATE TABLE `tickets` (
 --
 
 INSERT INTO `tickets` (`id`, `titre`, `description`, `categorie`, `priorite`, `statut`, `auteur_id`, `technicien_id`, `created_at`, `updated_at`) VALUES
-(1, 'premier ticket', 'test', 'MATERIEL', 'FAIBLE', 'RESOLVED', 1, NULL, '2026-02-27 16:43:09', '2026-02-28 10:23:38'),
+(1, 'ticket 1', 'test', 'MATERIEL', 'FAIBLE', 'RESOLVED', 1, NULL, '2026-02-27 16:43:09', '2026-02-28 10:23:38'),
 (2, 'ticket 2', 'test', 'MATERIEL', 'MOYENNE', 'OPEN', 1, NULL, '2026-02-27 17:17:52', NULL),
 (3, 'ticket 3', 'test 3', 'RESEAU', 'MOYENNE', 'OPEN', 1, NULL, '2026-02-27 17:39:45', NULL),
 (4, 'plus de wifi', 'Depuis que mon pc a fait la dernière mise à jour du réseau je n\'ai plus internet.', 'RESEAU', 'MOYENNE', 'IN_PROGRESS', 1, NULL, '2026-02-28 10:34:29', '2026-02-28 10:34:58'),
 (5, 'ticket 4', 'Plus d\'écran', 'MATERIEL', 'MOYENNE', 'CLOSED', 1, 2, '2026-02-28 10:59:58', '2026-02-28 11:04:25'),
-(6, 'blablu', 'pc marche pas', 'MATERIEL', 'FAIBLE', 'OPEN', 1, NULL, '2026-03-06 12:07:30', NULL),
-(7, 'blablu', 'pc marche pas', 'MATERIEL', 'FAIBLE', 'IN_PROGRESS', 1, 2, '2026-03-06 12:22:02', '2026-03-06 14:07:15'),
-(8, '(-_-iujhg-(', '-èujhgt(-èuyt', 'LOGICIEL', 'ELEVEE', 'IN_PROGRESS', 1, 2, '2026-03-06 18:48:02', '2026-03-06 18:48:18'),
-(9, 'wiwi pas content', 'pc marche plus', 'LOGICIEL', 'ELEVEE', 'IN_PROGRESS', 4, 2, '2026-03-06 19:44:33', '2026-03-08 20:03:30');
+(6, 'ticket 5', 'pc marche pas', 'MATERIEL', 'FAIBLE', 'OPEN', 1, NULL, '2026-03-06 12:07:30', NULL),
+(7, 'ticket 6', 'pc marche pas', 'MATERIEL', 'FAIBLE', 'IN_PROGRESS', 1, 2, '2026-03-06 12:22:02', '2026-03-06 14:07:15'),
+(8, 'ticket 7', '-èujhgt(-èuyt', 'LOGICIEL', 'ELEVEE', 'IN_PROGRESS', 1, 2, '2026-03-06 18:48:02', '2026-03-06 18:48:18'),
+(9, 'ticket 8', 'pc marche plus', 'LOGICIEL', 'ELEVEE', 'IN_PROGRESS', 4, 2, '2026-03-06 19:44:33', '2026-03-08 20:03:30');
 
 -- --------------------------------------------------------
 
@@ -149,12 +147,12 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT pour la table `tickets`
 --
 ALTER TABLE `tickets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Contraintes pour les tables exportées
 --
