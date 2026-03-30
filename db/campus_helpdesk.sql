@@ -77,10 +77,17 @@ INSERT INTO `tickets` (`id`, `titre`, `description`, `categorie`, `priorite`, `s
 (3, 'ticket 3', 'test 3', 'RESEAU', 'MOYENNE', 'OPEN', 1, NULL, '2026-02-27 17:39:45', NULL),
 (4, 'plus de wifi', 'Depuis que mon pc a fait la dernière mise à jour du réseau je n\'ai plus internet.', 'RESEAU', 'MOYENNE', 'IN_PROGRESS', 1, NULL, '2026-02-28 10:34:29', '2026-02-28 10:34:58'),
 (5, 'ticket 4', 'Plus d\'écran', 'MATERIEL', 'MOYENNE', 'CLOSED', 1, 2, '2026-02-28 10:59:58', '2026-02-28 11:04:25'),
+<<<<<<< HEAD
+(6, 'ticket 4', 'pc marche pas', 'MATERIEL', 'FAIBLE', 'OPEN', 1, NULL, '2026-03-06 12:07:30', NULL),
+(7, 'ticket 5', 'pc marche pas', 'MATERIEL', 'FAIBLE', 'IN_PROGRESS', 1, 2, '2026-03-06 12:22:02', '2026-03-06 14:07:15'),
+(8, 'ticket 6', 'probleme ordinateur', 'LOGICIEL', 'ELEVEE', 'IN_PROGRESS', 1, 2, '2026-03-06 18:48:02', '2026-03-06 18:48:18'),
+(9, 'ticket 7', 'pc marche plus', 'LOGICIEL', 'ELEVEE', 'IN_PROGRESS', 4, 2, '2026-03-06 19:44:33', '2026-03-08 20:03:30');
+=======
 (6, 'ticket 5', 'pc marche pas', 'MATERIEL', 'FAIBLE', 'OPEN', 1, NULL, '2026-03-06 12:07:30', NULL),
 (7, 'ticket 6', 'pc marche pas', 'MATERIEL', 'FAIBLE', 'IN_PROGRESS', 1, 2, '2026-03-06 12:22:02', '2026-03-06 14:07:15'),
 (8, 'ticket 7', '-èujhgt(-èuyt', 'LOGICIEL', 'ELEVEE', 'IN_PROGRESS', 1, 2, '2026-03-06 18:48:02', '2026-03-06 18:48:18'),
 (9, 'ticket 8', 'pc marche plus', 'LOGICIEL', 'ELEVEE', 'IN_PROGRESS', 4, 2, '2026-03-06 19:44:33', '2026-03-08 20:03:30');
+>>>>>>> fa1df43caa978cc30c74e26318eafb96d6a765dd
 
 -- --------------------------------------------------------
 
